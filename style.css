@@ -1,0 +1,536 @@
+/* デザイン調整 */
+form {
+  width: 320px;
+  margin: 40px auto;
+}
+
+div {
+  margin-top: 40px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+}
+
+input[type="checkbox"] {
+  width: 10px;
+}
+
+
+
+
+/* リセット */
+input,
+button,
+textarea,
+select {
+  /* デフォルトスタイルをリセット */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* font-familyを継承しないので、継承させる */
+  font-family: inherit;
+
+  /* iOSの角丸をリセット */
+  border-radius: 0;
+
+  /* box-size */
+  /*box-sizing: border-box; */
+}
+
+
+
+
+/* input通常時 */
+input {
+  background-color: #eee;
+}
+
+/* inputフォーカスが当たっている時 */
+input:focus {
+  background-color: #eee;
+}
+
+/* input使用不可の時(disabledが指定されている) */
+input[type="text"]:disabled {
+  background-color: blue;
+}
+
+/* 読み込み専用の時(readonlyが指定されている) */
+input[type="text"]:read-only {
+  background-color: yellow;
+}
+
+
+
+
+input {
+  border: none;
+  /* inputの枠線を消す */
+  outline: 0;
+  /*inputのフォーカス時の枠線を消す*/
+  color: inherit;
+  /* 文字色を親から継承 */
+  font-family: inherit;
+  /* フォントを親から継承 */
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea:focus {
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  box-shadow: none;
+  outline: none;
+}
+
+
+
+
+
+/* auto complete(chrome) */
+input:-webkit-autofill {
+  /* 背景色(background-colorではなくbox-shadow) */
+  -webkit-box-shadow: 0 0 0 1000px #eee inset;
+
+  /* 文字色(colorではなく-webkit-text-fill-color) */
+  -webkit-text-fill-color: #333 !important;
+}
+
+
+/* textarea */
+textarea {
+  border-radius: 0;
+  resize: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background-color: #eee;
+}
+
+
+
+
+
+
+
+
+/* input type="date" */
+/* iOSで高さが足りない現象が起きる場合は、heightを指定して回避 */
+
+/* スピンボタン(上下矢印が年・月・日の数字を１つずつ上下させるボタン)非表示  */
+input[type="date"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* クリアボタン非表示　入力すると出てくる */
+input[type="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+}
+
+/* 無入力時の 年/月/日 を / / にする */
+input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+  color: transparent;
+}
+
+/* /の色を変える */
+input[type=date]::-webkit-datetime-edit-text {
+  color: #666;
+}
+
+/* カレンダー表示ボタン(▼)非表示 */
+input[type="date"] {
+  /* dateの▼を消すCSS */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent; //android (iOSは不明)
+  -webkit-appearance: none;
+  opacity: 0;
+
+  /* inputのどこをクリックしてもカレンダーを表示したい場合のみ */
+  width: 100%;
+}
+
+/* fontAwesomeのカレンダーアイコンをインジケータにする */
+input[type=date]::-webkit-calendar-picker-indicator:before {
+  color: #666;
+  font-family: FontAwesome;
+
+  /*content: "\f073";*/
+  /* fa-calendar */
+  content: "\f133";
+  /* fa-calendar-o */
+
+  position: absolute;
+
+  /* 任意の値 */
+  left: -5px;
+
+  /* 任意の値 */
+  top: -5px;
+}
+
+
+/* input type="number" スピンボタン(数字を１つずつ上下させるボタン)非表示  chrome,safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* スピンボタン非表示 数字を１つずつ上下させるボタン firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+/* input="search" reset系のcssで非表示にした×ボタン(文字を入力すると×が表示される)の復活 */
+
+/* 〇IE10以降、Edge、Chrome、Safari */
+/* ×firefox */
+input[type="search"] {
+  -webkit-appearance: searchfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+}
+
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]:focus {
+  outline-offset: -2px;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+/* ｘのデザイン変更 */
+input[type="search"] ::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height 20px;
+  width 20px;
+  background-image url(/img/times-circle.svg);
+}
+
+
+
+
+
+/* input[type="range"] */
+input[type=range] {
+  -webkit-appearance: none;
+  background: #eee;
+  height: 22px;
+}
+
+/* ms ツールチップ　非表示 */
+input[type=range]::-ms-tooltip {
+  display: none;
+}
+
+
+/* webkit ツマミ */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 #333;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: -10px;
+}
+
+/* mozilla ツマミ */
+input[type=range]::-moz-range-thumb {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 #333;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+
+/* ms ツマミ */
+input[type=range]::-ms-thumb {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 #333;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 1px;
+}
+
+/* ms ツマミ　(chome ツマミ調整の影響を消す) */
+@supports (-ms-ime-align: auto) {
+  input[type=range]::-webkit-slider-thumb {
+    margin-top: 0px !important;
+  }
+
+}
+
+
+
+
+
+/* mozilla 溝 */
+input[type=range]::-moz-range-track {
+  height: 0;
+  border: 1px solid #333;
+}
+
+/* WebKit 溝 */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0;
+  cursor: pointer;
+  /* animate: 0.2s; */
+  /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+  background: #cccccc;
+  /* border-radius: 1.3px; */
+  border: 1px solid #333;
+  margin-top: 0px;
+}
+
+/* ms 溝 */
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+/* ms(ie) 溝の位置調整 */
+@media all and (-ms-high-contrast: none) {
+  input[type=range]::-ms-track {
+    margin-top: -5px !important;
+  }
+}
+
+
+/* ms 溝の色（つまみより左側） */
+input[type=range]::-ms-fill-lower {
+  background: #cccccc;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+/* ms 溝の色（つまみより右側） */
+input[type=range]::-ms-fill-upper {
+  background: #cccccc;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+
+
+/* ms focus時の色（つまみより左側） */
+input[type=range]:focus::-ms-fill-lower {
+  background: #999999;
+}
+
+/* ms focus時の色（つまみより右側） */
+input[type=range]:focus::-ms-fill-upper {
+  background: #999999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* input type="file" */
+input[type="file"] {
+  /* 状態表示メッセージの背景色 */
+  background-color: inherit;
+}
+
+
+
+
+/* placeholderの文字色指定 */
+::placeholder {
+  color: red;
+}
+
+:-ms-input-placeholder {
+  /* IE (疑似クラス) */
+  color: red;
+}
+
+::-ms-input-placeholder {
+  /* Edge (疑似要素)*/
+  color: red;
+
+}
+
+
+
+
+
+/* selectboxデザイン変更 */
+select {
+  /* 右端の▼を消す */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* 代わりに任意の画像を指定 */
+  background: transparent url(../img/form-css-arrow.png) no-repeat center right 8px/16px 16px;
+}
+
+select::-ms-expand {
+  /* 右端の▼を消す(IE) */
+  display: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+
+
+
+/* radiobuttonのデザイン変更 */
+/* デフォルトのinputを隠す */
+input[type="radio"] {
+  display: none;
+}
+
+/* inputの次のlabelのbefore */
+input[type="radio"]+label::before {
+  content: "４４";
+
+  /* 未チェック時の色指定 */
+  background-color: gray;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 5px;
+}
+
+/* inputがcheckedの次のlabelのafter */
+input[type="radio"]:checked+label::after {
+  content: "";
+
+  /* チェック時の色指定 */
+  background-color: red;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  left: 8px;
+  top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フローティングラベル */
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+}
+
+.inp .label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  font-size: 16px;
+  color: #9098a9;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+}
+
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #07f;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
+
+.inp input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 12px 0;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #c8ccd4;
+  background: none;
+  border-radius: 0;
+  color: #223254;
+  transition: all 0.15s ease;
+}
+
+.inp input:hover {
+  background: rgba(34, 50, 84, 0.03);
+}
+
+.inp input:not(:placeholder-shown)+span {
+  color: #5a667f;
+  transform: translateY(-26px) scale(0.75);
+}
+
+.inp input:focus {
+  background: none;
+  outline: none;
+}
+
+.inp input:focus+span {
+  color: #07f;
+  transform: translateY(-26px) scale(0.75);
+}
+
+.inp input:focus+span+.border {
+  transform: scaleX(1);
+}

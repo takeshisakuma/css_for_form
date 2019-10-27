@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS for form</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+  <p>input[type="date"]がlabelと紐付いていない<br>
+    colorはブラウザによって全く違うので、作る<br>
+    fileはCSSではどうにもできないので、checkboxなどと同じように作る<br>
+    増減ボタン、×ボタン、三角ボタン<br>
+    checkbox<br>
+    selectbox<br>
+    ボタンは、inputではなくbuttonを使う。(CSSが効きやすいので)<br>
+    input type="datetime"は廃止input type="datetime-local"を推奨<br>
+    幅(box-sozing:border-box;にすると消えるものがある)<br>
+    フローティングラベル<br>
+
+    状態<br>
+    状態を利用したバリデーション<br>
+
+
+  </p>
+  <form action="mail.php" method="post">
+
+    <div>
+      <label for="form__input--text">テキスト(type="text")</label>
+      <input type="text" name="text" id="form__input--text" placeholder="ああああ">
+    </div>
+
+    <div>
+      <label for="form__input--email">メールアドレス(type="email")</label>
+      <input type="email" name="email" id="form__input--email">
+    </div>
+
+    <div>
+      <label for="form__input--password">パスワード(type="password")</label>
+      <input type="password" name="password" id="form__input--password">
+    </div>
+
+    <div>
+      <label for="form__input--url">URL(type="url")</label>
+      <input type="url" name="url" id="form__input--url">
+    </div>
+
+    <div>
+      <label for="form__input--tel">電話番号(type="telephone")</label>
+      <input type="tel" name="tel" id="form__input--tel">
+    </div>
+
+    <div>
+      <label for="form__input--search">検索ワード(type="search")</label>
+      <input type="search" name="search" id="form__input--search">
+    </div>
+
+
+    <div>
+      <label for="form__input--number">数(type="number")</label>
+      <input type="number" name="number" id="form__input--number">
+    </div>
+
+    <div>
+      <label for="form__input--date">日付(type="date")</label>
+      <input type="date" name="date" id="form__input--date">
+    </div>
+
+    <div>
+      <label for="form__input--datetime-local">日時(type="datetime-local")</label>
+      <input type="datetime-local" name="datetime-local" id="form__input--datetime-local">
+    </div>
+
+    <div>
+      <label for="form__input--month">月(type="month")</label>
+      <input type="month" name="month" id="form__input--month">
+    </div>
+
+    <div>
+      <label for="form__input--week">週(type="week")</label>
+      <input type="week" name="week" id="form__input--week">
+    </div>
+
+    <div>
+      <label for="form__input--time">時(type="time")</label>
+      <input type="time" name="time" id="form__input--time">
+    </div>
+
+    <div>
+      <label for="form__input--range">範囲(type="range")</label>
+      <input type="range" name="range" id="form__input--range">
+    </div>
+
+    <div>
+      <label for="form__input--color">色(type="color")</label>
+      <input type="color" name="color" id="form__input--color">
+    </div>
+
+    <div>
+      <label for="form__input--file">ファイル(type="file")</label>
+      <input type="file" name="file" id="form__input--file">
+    </div>
+
+
+
+    <div>
+      <label for="form__select--blood">血液型：</label>
+      <select name="blood" id="form__select--blood">
+        <option value="A">A型</option>
+        <option value="B">B型</option>
+        <option value="O">O型</option>
+        <option value="AB">AB型</option>
+      </select>
+    </div>
+
+    <div>
+      <p>性別</p>
+      <input type="radio" name="sex" value="male" id="form__input--radio1">
+      <label for="form__input--radio1">男</label>
+      <input type="radio" name="sex" value="female" id="form__input--radio2">
+      <label for="form__input--radio2">女</label>
+    </div>
+
+    <div>
+      <p>趣味</p>
+      <input type="checkbox" name="hobby" value="sports">
+      <label>スポーツ</label>
+      <input type="checkbox" name="hobby" value="reading">
+      <label>読書</label>
+      <input type="checkbox" name="hobby" value="music">
+      <label>音楽</label>
+      <input type="checkbox" name="hobby" value="travel">
+      <label>旅行</label>
+    </div>
+
+    <div>
+      <label>コメント</label>
+      <textarea name="comments" rows="2" cols="40"></textarea>
+    </div>
+
+    <div>
+      <input type="submit" value="汎用ボタン(送信)">
+    </div>
+
+
+
+    <div style="position: relative;">
+      <label for="inp" class="inp">
+        <input type="text" id="inp" placeholder="&nbsp;">
+        <span class="label">お名前</span>
+        <span class="border"></span>
+      </label>
+    </div>
+
+    </div>
+  </form>
+</body>
+</html>
