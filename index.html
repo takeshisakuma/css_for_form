@@ -9,27 +9,19 @@
 </head>
 <body>
 
-  <p>input[type="date"]がlabelと紐付いていない<br>
-    colorはブラウザによって全く違うので、作る<br>
-    fileはCSSではどうにもできないので、checkboxなどと同じように作る<br>
-    増減ボタン、×ボタン、三角ボタン<br>
-    checkbox<br>
-    selectbox<br>
-    ボタンは、inputではなくbuttonを使う。(CSSが効きやすいので)<br>
-    input type="datetime"は廃止input type="datetime-local"を推奨<br>
-    幅(box-sozing:border-box;にすると消えるものがある)<br>
-    フローティングラベル<br>
 
-    状態<br>
-    状態を利用したバリデーション<br>
+  作る系<br>
+  ・checkbox<br>
+  ・file<br>
+  ・radio<br>
+  ・ボタン(active)<br>
 
 
   </p>
-  <form action="mail.php" method="post">
-
+  <form action="mail.php" method="post" enctype="multipart/form-data">
     <div>
       <label for="form__input--text">テキスト(type="text")</label>
-      <input type="text" name="text" id="form__input--text" placeholder="ああああ">
+      <input type="text" name="text" id="form__input--text">
     </div>
 
     <div>
@@ -57,11 +49,12 @@
       <input type="search" name="search" id="form__input--search">
     </div>
 
-
     <div>
       <label for="form__input--number">数(type="number")</label>
       <input type="number" name="number" id="form__input--number">
     </div>
+
+
 
     <div>
       <label for="form__input--date">日付(type="date")</label>
@@ -105,15 +98,6 @@
 
 
 
-    <div>
-      <label for="form__select--blood">血液型：</label>
-      <select name="blood" id="form__select--blood">
-        <option value="A">A型</option>
-        <option value="B">B型</option>
-        <option value="O">O型</option>
-        <option value="AB">AB型</option>
-      </select>
-    </div>
 
     <div>
       <p>性別</p>
@@ -125,32 +109,42 @@
 
     <div>
       <p>趣味</p>
-      <input type="checkbox" name="hobby" value="sports">
-      <label>スポーツ</label>
-      <input type="checkbox" name="hobby" value="reading">
-      <label>読書</label>
-      <input type="checkbox" name="hobby" value="music">
-      <label>音楽</label>
-      <input type="checkbox" name="hobby" value="travel">
-      <label>旅行</label>
+      <input type="checkbox" name="hobby" value="sports" id="form__input--checkbox1">
+      <label for="form__input--checkbox1">スポーツ</label>
+      <input type="checkbox" name="hobby" value="reading" id="form__input--checkbox2">
+      <label for="form__input--checkbox2">読書</label>
+      <input type="checkbox" name="hobby" value="music" id="form__input--checkbox3">
+      <label for="form__input--checkbox3">音楽</label>
+      <input type="checkbox" name="hobby" value="travel" id="form__input--checkbox4">
+      <label for="form__input--checkbox4">旅行</label>
+    </div>
+
+
+    <div>
+      <label for="form__select--blood">血液型</label>
+      <select name="blood" id="form__select--blood">
+        <option value="A">A型</option>
+        <option value="B">B型</option>
+        <option value="O">O型</option>
+        <option value="AB">AB型</option>
+      </select>
+    </div>
+
+
+    <div>
+      <label for="form__textarea">コメント</label>
+      <textarea name="comments" rows="4" cols="40" id="form__textarea"></textarea>
     </div>
 
     <div>
-      <label>コメント</label>
-      <textarea name="comments" rows="2" cols="40"></textarea>
+      <button type="submit" value="send">汎用ボタン</button>
     </div>
+
 
     <div>
-      <input type="submit" value="汎用ボタン(送信)">
-    </div>
-
-
-
-    <div style="position: relative;">
-      <label for="inp" class="inp">
-        <input type="text" id="inp" placeholder="&nbsp;">
-        <span class="label">お名前</span>
-        <span class="border"></span>
+      <label class="floatinglabel">
+        <input type="text" name="text2" placeholder="&nbsp;">
+        <span class="labeltext">名前</span>
       </label>
     </div>
 
