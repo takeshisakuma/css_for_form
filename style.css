@@ -8,6 +8,10 @@ div {
   margin-top: 40px;
 }
 
+p {
+  margin: 0;
+}
+
 input,
 textarea,
 select {
@@ -15,12 +19,6 @@ select {
   padding: 10px;
   width: 100%;
 }
-
-input[type="checkbox"] {
-  width: 10px;
-}
-
-
 
 /* ------------------------------------------------------------------------------------------- */
 
@@ -126,6 +124,7 @@ input:-webkit-autofill {
 /* ------------------------------------------------------------------------------------------- */
 
 /* input */
+
 input {
   /* 背景色(任意の色を指定) */
   background-color: #eee;
@@ -151,6 +150,8 @@ input:focus {
 
 /* ------------------------------------------------------------------------------------------- */
 
+/* input[type="search"] */
+
 /* サーチキャンセルボタンのデザイン変更 */
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -175,6 +176,7 @@ input[type="search"]:focus {
 /* ------------------------------------------------------------------------------------------- */
 
 /* input日時系 */
+
 /* カレンダー表示ボタン アイコン変更 */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="datetime-local"]::-webkit-calendar-picker-indicator,
@@ -189,6 +191,7 @@ input[type="week"]::-webkit-calendar-picker-indicator {
 /* ------------------------------------------------------------------------------------------- */
 
 /* input[type="range"] */
+
 input[type=range] {
   -webkit-appearance: none;
   /* height: 46px; */
@@ -304,25 +307,44 @@ input[type=range]:focus::-ms-fill-upper {
   background: #999999;
 }
 
-
-
-
 /* ------------------------------------------------------------------------------------------- */
-
 
 /* input type="file" */
 input[type="file"] {
-  /* 状態表示メッセージの背景色 */
-  background-color: inherit;
+  display: none;
 }
 
+input[type="file"]+label {
+  background: #2980b9;
+  border-bottom: 4px solid #434343;
+  border-radius: 4px;
+  color: #FFF;
+  display: table;
+  font-weight: bold;
+  line-height: 1;
+  margin: 10px auto 0;
+  padding: 20px 40px;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out, border-bottom 0.2s ease-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+input[type="file"]+label:hover {
+  background: #3498db;
+}
+
+input[type="file"]+label:active {
+  background: #34495e;
+  border-bottom: 4px solid transparent;
+  transform: translateY(4px);
+}
 
 /* ------------------------------------------------------------------------------------------- */
 
+/* selectbox */
 
-
-/* selectboxデザイン変更 */
 select {
   /* 右端の▼を消す */
   -webkit-appearance: none;
@@ -347,47 +369,114 @@ select:focus {
   outline: none;
 }
 
-
 /* ------------------------------------------------------------------------------------------- */
 
+/* radio */
 
-/* radiobuttonのデザイン変更 */
+.radiobuttonMember {
+  margin-top: 10px;
+}
+
 /* デフォルトのinputを隠す */
 input[type="radio"] {
   display: none;
 }
 
-/* inputの次のlabelのbefore */
+/* ラベルの前の四角形を作る */
 input[type="radio"]+label::before {
-  content: "４４";
-
-  /* 未チェック時の色指定 */
-  background-color: gray;
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  left: 5px;
-}
-
-/* inputがcheckedの次のlabelのafter */
-input[type="radio"]:checked+label::after {
+  border: 2px solid #343434;
   content: "";
-
-  /* チェック時の色指定 */
-  background-color: red;
-  width: 9px;
-  height: 9px;
+  height: 16px;
+  margin-top: 4px;
   position: absolute;
-  left: 8px;
-  top: 5px;
+  width: 16px;
 }
 
+/* SVGの位置と大きさの指定 */
+input[type="radio"]+label>svg {
+  height: 20px;
+  left: 3px;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+  width: 20px;
+}
 
+/* チェックマークの設定(未チェック時)  */
+input[type="radio"]+label>svg>path {
+  fill: none;
+  stroke: #27ae60;
+  stroke-dasharray: 130;
+  stroke-dashoffset: 100;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-opacity: 0;
+  stroke-width: 8px;
+  transition: stroke-dashoffset 0.2s ease-out;
+}
 
+/* チェックマークの設定(チェック時) */
+input[type="radio"]:checked+label>svg>path {
+  stroke-dashoffset: 0;
+  stroke-opacity: 1;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+/* checkbox */
+
+.checkboxMember {
+  margin-top: 10px;
+}
+
+/* デフォルトのinputを隠す */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* ラベルの前の四角形を作る */
+input[type="checkbox"]+label::before {
+  border: 2px solid #343434;
+  content: "";
+  height: 16px;
+  margin-top: 4px;
+  position: absolute;
+  width: 16px;
+}
+
+/* SVGの位置と大きさの指定 */
+input[type="checkbox"]+label>svg {
+  height: 20px;
+  left: 3px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  width: 20px;
+}
+
+/* チェックマークの設定(未チェック時)  */
+input[type="checkbox"]+label>svg>path {
+  fill: none;
+  stroke: #e74c3c;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-opacity: 0;
+  stroke-width: 8px;
+  transition: stroke-dashoffset 0.1s ease-out;
+}
+
+/* チェックマークの設定(チェック時) */
+input[type="checkbox"]:checked+label>svg>path {
+  stroke-dashoffset: 0;
+  stroke-opacity: 1;
+}
 
 /* ------------------------------------------------------------------------------------------- */
 
 /* textarea */
+
 textarea {
   background-color: #eee;
   border: 1px solid transparent;
@@ -416,56 +505,40 @@ textarea:focus {
   outline: none;
 }
 
-
 /* ------------------------------------------------------------------------------------------- */
 
-/* ボタン */
+/* button */
+
 button {
-  color: #fff;
+  background: #16a085;
   border: none;
-  border-radius: 2px;
-  background-color: green;
-  box-shadow: 0 0 6px 0 #333;
-  padding: 20px;
-  transition: background-color 0.2s ease-out;
-  width: 100%;
+  border-bottom: 4px solid #434343;
+  border-radius: 4px;
+  color: #FFF;
+  display: table;
+  font-weight: bold;
+  line-height: 1;
+  margin: 10px auto 0;
+  outline: none;
+  padding: 20px 40px;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out, border-bottom 0.2s ease-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 button:hover {
-  background-color: red;
+  background: #1abc9c;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button:active {
+  background: #006266;
+  border-bottom: 4px solid transparent;
+  transform: translateY(4px);
+}
 
 /* ------------------------------------------------------------------------------------------- */
-
-
 
 /* フローティングラベル */
 
@@ -489,12 +562,11 @@ button:hover {
   transform: translateY(-38px) translateX(-16px)
 }
 
-
 /* ------------------------------------------------------------------------------------------- */
 
 /* 状態 */
 
-/* 値が空 */
+/* 値が空のとき */
 input:empty {}
 
 /* 値が合致している */

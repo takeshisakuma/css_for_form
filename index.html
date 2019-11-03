@@ -9,15 +9,6 @@
 </head>
 <body>
 
-
-  作る系<br>
-  ・checkbox<br>
-  ・file<br>
-  ・radio<br>
-  ・ボタン(active)<br>
-
-
-  </p>
   <form action="mail.php" method="post" enctype="multipart/form-data">
     <div>
       <label for="form__input--text">テキスト(type="text")</label>
@@ -92,61 +83,101 @@
     </div>
 
     <div>
-      <label for="form__input--file">ファイル(type="file")</label>
+      <p>ファイル(type="file")</p>
+
       <input type="file" name="file" id="form__input--file">
-    </div>
-
-
-
-
-    <div>
-      <p>性別</p>
-      <input type="radio" name="sex" value="male" id="form__input--radio1">
-      <label for="form__input--radio1">男</label>
-      <input type="radio" name="sex" value="female" id="form__input--radio2">
-      <label for="form__input--radio2">女</label>
-    </div>
-
-    <div>
-      <p>趣味</p>
-      <input type="checkbox" name="hobby" value="sports" id="form__input--checkbox1">
-      <label for="form__input--checkbox1">スポーツ</label>
-      <input type="checkbox" name="hobby" value="reading" id="form__input--checkbox2">
-      <label for="form__input--checkbox2">読書</label>
-      <input type="checkbox" name="hobby" value="music" id="form__input--checkbox3">
-      <label for="form__input--checkbox3">音楽</label>
-      <input type="checkbox" name="hobby" value="travel" id="form__input--checkbox4">
-      <label for="form__input--checkbox4">旅行</label>
+      <label for="form__input--file">ファイルを選択</label>
     </div>
 
 
     <div>
-      <label for="form__select--blood">血液型</label>
-      <select name="blood" id="form__select--blood">
-        <option value="A">A型</option>
-        <option value="B">B型</option>
-        <option value="O">O型</option>
-        <option value="AB">AB型</option>
-      </select>
+      <p>性別(type="radio")</p>
+
+      <div class="radiobuttonMember">
+        <input type="radio" name="sex" value="male" id="form__input--radio1">
+        <label for="form__input--radio1">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
+            <path d="M21.184 54.944c-9.963-.554-17.871-8.793-17.871-18.88 0-10.442 8.479-18.909 18.938-18.909s18.938 8.466 18.938 18.909-8.479 18.91-18.938 18.91" />
+          </svg>男</label>
+      </div>
+
+      <div class="radiobuttonMember">
+        <input type="radio" name="sex" value="female" id="form__input--radio2">
+        <label for="form__input--radio2">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
+            <path d="M21.184 54.944c-9.963-.554-17.871-8.793-17.871-18.88 0-10.442 8.479-18.909 18.938-18.909s18.938 8.466 18.938 18.909-8.479 18.91-18.938 18.91" />
+          </svg>女</label>
+      </div>
     </div>
 
 
     <div>
-      <label for="form__textarea">コメント</label>
-      <textarea name="comments" rows="4" cols="40" id="form__textarea"></textarea>
-    </div>
+      <p>趣味(type="checkbox")</p>
 
-    <div>
-      <button type="submit" value="send">汎用ボタン</button>
-    </div>
+      <div class="checkboxMember">
+        <input type="checkbox" name="hobby" value="listenmusic" id="form__input--checkbox1">
+        <label for="form__input--checkbox1">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
+            <path d="M18 4l-6 42s66-68 74-40" />
+          </svg>音楽鑑賞
+        </label>
+      </div>
+
+      <div class="checkboxMember">
+        <input type="checkbox" name="hobby" value="readbook" id="form__input--checkbox2">
+        <label for="form__input--checkbox2">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
+            <path d="M18 4l-6 42s66-68 74-40" />
+          </svg>読書
+        </label>
+      </div>
+
+      <div class="checkboxMember">
+        <input type="checkbox" name="hobby" value="watchmovie" id="form__input--checkbox3">
+        <label for="form__input--checkbox3">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
+            <path d="M18 4l-6 42s66-68 74-40" />
+          </svg>映画鑑賞
+        </label>
+      </div>
+
+      <div class="checkboxMember">
+        <input type="checkbox" name="hobby" value="playgame" id="form__input--checkbox4">
+        <label for="form__input--checkbox4">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
+            <path d="M18 4l-6 42s66-68 74-40" />
+          </svg>ゲーム
+        </label>
+      </div>
 
 
-    <div>
-      <label class="floatinglabel">
-        <input type="text" name="text2" placeholder="&nbsp;">
-        <span class="labeltext">名前</span>
-      </label>
-    </div>
+      <div>
+        <label for="form__select--blood">血液型(select)</label>
+        <select name="blood" id="form__select--blood">
+          <option value="A">A型</option>
+          <option value="B">B型</option>
+          <option value="O">O型</option>
+          <option value="AB">AB型</option>
+        </select>
+      </div>
+
+
+      <div>
+        <label for="form__textarea">コメント(textarea)</label>
+        <textarea name="comments" rows="4" cols="40" id="form__textarea"></textarea>
+      </div>
+
+      <div>
+        <p>送信ボタン(button)</p>
+        <button type="submit" value="send">送信</button>
+      </div>
+
+      <div>
+        <label class="floatinglabel">
+          <input type="text" name="text2" placeholder="&nbsp;">
+          <span class="labeltext">名前</span>
+        </label>
+      </div>
 
     </div>
   </form>
