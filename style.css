@@ -379,7 +379,9 @@ select:focus {
 
 /* デフォルトのinputを隠す */
 input[type="radio"] {
-  display: none;
+  display: initial;
+  position: relative;
+  opacity: 0;
 }
 
 /* ラベルの前の四角形を作る */
@@ -416,10 +418,18 @@ input[type="radio"]+label>svg>path {
 }
 
 /* チェックマークの設定(チェック時) */
-input[type="radio"]:checked+label>svg>path {
+input[type="radio"]:checked+label>svg>path,
+input[type="radio"]:focus+label>svg>path {
   stroke-dashoffset: 0;
   stroke-opacity: 1;
 }
+
+/* ラベルの位置調整 */
+input[type="radio"]+label {
+  left: -30px;
+  position: relative;
+}
+
 
 /* ------------------------------------------------------------------------------------------- */
 
