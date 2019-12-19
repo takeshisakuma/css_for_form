@@ -528,7 +528,8 @@ button {
   user-select: none;
 }
 
-button:hover {
+button:hover,
+button:focus {
   background: #1abc9c;
 }
 
@@ -537,6 +538,8 @@ button:active {
   border-bottom: 4px solid transparent;
   transform: translateY(4px);
 }
+
+
 
 /* ------------------------------------------------------------------------------------------- */
 
