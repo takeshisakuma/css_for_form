@@ -394,7 +394,7 @@ input[type="radio"]+label::before {
   width: 16px;
 }
 
-/* ラベルの前の四角形のフォーカスと時 */
+/* ラベルの前の四角形のフォーカス時 */
 input[type="radio"]:focus+label::before {
   border: 2px solid #e74c3c;
 }
@@ -446,7 +446,10 @@ input[type="radio"]+label {
 
 /* デフォルトのinputを隠す */
 input[type="checkbox"] {
-  display: none;
+  display: initial;
+  position: relative;
+  opacity: 0;
+
 }
 
 /* ラベルの前の四角形を作る */
@@ -458,6 +461,12 @@ input[type="checkbox"]+label::before {
   position: absolute;
   width: 16px;
 }
+
+/* ラベルの前の四角形のフォーカス時 */
+input[type="checkbox"]:focus+label::before {
+  border: 2px solid #e74c3c;
+}
+
 
 /* SVGの位置と大きさの指定 */
 input[type="checkbox"]+label>svg {
@@ -487,6 +496,13 @@ input[type="checkbox"]:checked+label>svg>path {
   stroke-dashoffset: 0;
   stroke-opacity: 1;
 }
+
+/* ラベルの位置調整 */
+input[type="checkbox"]+label {
+  left: -30px;
+  position: relative;
+}
+
 
 /* ------------------------------------------------------------------------------------------- */
 
