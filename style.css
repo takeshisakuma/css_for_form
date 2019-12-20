@@ -311,8 +311,13 @@ input[type=range]:focus::-ms-fill-upper {
 
 /* input type="file" */
 input[type="file"] {
-  display: none;
+  display: initial;
+  position: absolute;
+  opacity: 0;
 }
+
+
+
 
 input[type="file"]+label {
   background: #2980b9;
@@ -331,15 +336,19 @@ input[type="file"]+label {
   user-select: none;
 }
 
-input[type="file"]+label:hover {
+input[type="file"]:hover+label,
+input[type="file"]:focus+label {
   background: #3498db;
+
 }
 
-input[type="file"]+label:active {
+input[type="file"]:active+label {
   background: #34495e;
   border-bottom: 4px solid transparent;
   transform: translateY(4px);
 }
+
+
 
 /* ------------------------------------------------------------------------------------------- */
 
