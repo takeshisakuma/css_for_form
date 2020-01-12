@@ -90,8 +90,8 @@
     </div>
 
 
-    <div>
-      <p>性別(type="radio")</p>
+    <fieldset>
+      <legend>性別(type="radio")</legend>
 
       <div class="radiobuttonMember">
         <input type="radio" name="sex" value="male" id="form__input--radio1">
@@ -108,11 +108,11 @@
             <path d="M21.184 54.944c-9.963-.554-17.871-8.793-17.871-18.88 0-10.442 8.479-18.909 18.938-18.909s18.938 8.466 18.938 18.909-8.479 18.91-18.938 18.91" />
           </svg>女</label>
       </div>
-    </div>
+    </fieldset>
 
 
-    <div>
-      <p>趣味(type="checkbox")</p>
+    <fieldset>
+      <legend>趣味(type="checkbox")</legend>
 
       <div class="checkboxMember">
         <input type="checkbox" name="hobby" value="listenmusic" id="form__input--checkbox1">
@@ -150,34 +150,36 @@
         </label>
       </div>
 
-
-      <div>
-        <label for="form__select--blood">血液型(select)</label>
-        <select name="blood" id="form__select--blood">
-          <option value="A">A型</option>
-          <option value="B">B型</option>
-          <option value="O">O型</option>
-          <option value="AB">AB型</option>
-        </select>
-      </div>
+    </fieldset>
 
 
-      <div>
-        <label for="form__textarea">コメント(textarea)</label>
-        <textarea name="comments" rows="4" cols="40" id="form__textarea"></textarea>
-      </div>
+    <div>
+      <label for="form__select--blood">血液型(select)</label>
+      <select name="blood" id="form__select--blood">
+        <option value="A">A型</option>
+        <option value="B">B型</option>
+        <option value="O">O型</option>
+        <option value="AB">AB型</option>
+      </select>
+    </div>
 
-      <div>
-        <p>送信ボタン(button)</p>
-        <button type="submit" value="send">送信</button>
-      </div>
 
-      <div>
-        <label class="floatinglabel">
-          <input type="text" name="text2" placeholder="&nbsp;">
-          <span class="labeltext">名前</span>
-        </label>
-      </div>
+    <div>
+      <label for="form__textarea">コメント(textarea)</label>
+      <textarea name="comments" rows="4" cols="40" id="form__textarea"></textarea>
+    </div>
+
+    <div>
+      <p>送信ボタン(button)</p>
+      <button type="submit" value="send">送信</button>
+    </div>
+
+    <div>
+      <label class="floatinglabel">
+        <input type="text" name="text2" placeholder="&nbsp;">
+        <span class="labeltext">名前</span>
+      </label>
+    </div>
 
     </div>
   </form>
