@@ -179,6 +179,10 @@ input[type="search"]:focus {
   outline-offset: -2px;
 }
 
+/* パスワードの表示/非表示の切り替えスイッチ表示(IE、Edge)の非表示 */
+input[type=password]::-ms-reveal{
+  display:none;
+}
 /* ------------------------------------------------------------------------------------------- */
 
 /* input日時系 */
