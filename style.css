@@ -180,8 +180,8 @@ input[type="search"]:focus {
 }
 
 /* パスワードの表示/非表示の切り替えスイッチ表示(IE、Edge)の非表示 */
-input[type=password]::-ms-reveal{
-  display:none;
+input[type="password"]::-ms-reveal {
+  display: none;
 }
 /* ------------------------------------------------------------------------------------------- */
 
@@ -402,7 +402,7 @@ input[type="radio"] + label::before {
   border: 2px solid #343434;
   content: "";
   height: 16px;
-  margin-top: 4px;
+  top: 2px;
   position: absolute;
   width: 16px;
 }
@@ -467,7 +467,7 @@ input[type="checkbox"] + label::before {
   border: 2px solid #343434;
   content: "";
   height: 16px;
-  margin-top: 4px;
+  top: 2px;
   position: absolute;
   width: 16px;
 }
