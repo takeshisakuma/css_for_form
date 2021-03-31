@@ -198,18 +198,18 @@ input[type="week"]::-webkit-calendar-picker-indicator {
 
 /* input[type="range"] */
 
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
   /* height: 46px; */
 }
 
 /* ツールチップ 非表示(ms) */
-input[type=range]::-ms-tooltip {
+input[type="range"]::-ms-tooltip {
   display: none;
 }
 
 /* ツマミ(webkit) */
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: #fff;
   border-radius: 50%;
@@ -223,7 +223,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* ツマミ(mozilla) */
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   background-color: #fff;
   border: none;
   border-radius: 50%;
@@ -234,7 +234,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 /* ツマミ(ms) */
-input[type=range]::-ms-thumb {
+input[type="range"]::-ms-thumb {
   background-color: #fff;
   border: none;
   border-radius: 50%;
@@ -247,20 +247,19 @@ input[type=range]::-ms-thumb {
 
 /* ツマミ(ms) chomeツマミ調整の影響を消す */
 @supports (-ms-ime-align: auto) {
-  input[type=range]::-webkit-slider-thumb {
+  input[type="range"]::-webkit-slider-thumb {
     margin-top: 0px !important;
   }
-
 }
 
 /* 溝(mozilla) */
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   border: 1px solid #333;
   height: 0;
 }
 
 /* 溝(WebKit) */
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   background: #cccccc;
   border: 1px solid #333;
   cursor: pointer;
@@ -270,7 +269,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 /* 溝(ms) */
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   background: transparent;
   border-color: transparent;
   border-width: 16px 0;
@@ -282,13 +281,13 @@ input[type=range]::-ms-track {
 
 /* 溝の位置調整(ie) */
 @media all and (-ms-high-contrast: none) {
-  input[type=range]::-ms-track {
+  input[type="range"]::-ms-track {
     margin-top: -5px !important;
   }
 }
 
 /* 溝の色(ms)（つまみより左側） */
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
   background: #cccccc;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
@@ -296,7 +295,7 @@ input[type=range]::-ms-fill-lower {
 }
 
 /* 溝の色(ms)（つまみより右側） */
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
   background: #cccccc;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
@@ -304,12 +303,12 @@ input[type=range]::-ms-fill-upper {
 }
 
 /* 溝の色(ms)（つまみより左側）フォーカス時 */
-input[type=range]:focus::-ms-fill-lower {
+input[type="range"]:focus::-ms-fill-lower {
   background: #999999;
 }
 
 /* 溝の色(ms)（つまみより右側）フォーカス時 */
-input[type=range]:focus::-ms-fill-upper {
+input[type="range"]:focus::-ms-fill-upper {
   background: #999999;
 }
 
@@ -322,39 +321,34 @@ input[type="file"] {
   opacity: 0;
 }
 
-
-
-
-input[type="file"]+label {
+input[type="file"] + label {
   background: #2980b9;
   border-bottom: 4px solid #434343;
   border-radius: 4px;
-  color: #FFF;
+  color: #fff;
   display: table;
   font-weight: bold;
   line-height: 1;
   margin: 10px auto 0;
   padding: 20px 40px;
-  transition: background-color 0.2s ease-out, transform 0.2s ease-out, border-bottom 0.2s ease-out;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out,
+    border-bottom 0.2s ease-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-input[type="file"]:hover+label,
-input[type="file"]:focus+label {
+input[type="file"]:hover + label,
+input[type="file"]:focus + label {
   background: #3498db;
-
 }
 
-input[type="file"]:active+label {
+input[type="file"]:active + label {
   background: #34495e;
   border-bottom: 4px solid transparent;
   transform: translateY(4px);
 }
-
-
 
 /* ------------------------------------------------------------------------------------------- */
 
@@ -400,7 +394,7 @@ input[type="radio"] {
 }
 
 /* ラベルの前の四角形を作る */
-input[type="radio"]+label::before {
+input[type="radio"] + label::before {
   border: 2px solid #343434;
   content: "";
   height: 16px;
@@ -410,13 +404,12 @@ input[type="radio"]+label::before {
 }
 
 /* ラベルの前の四角形のフォーカス時 */
-input[type="radio"]:focus+label::before {
+input[type="radio"]:focus + label::before {
   border: 2px solid #e74c3c;
 }
 
-
 /* SVGの位置と大きさの指定 */
-input[type="radio"]+label>svg {
+input[type="radio"] + label > svg {
   height: 20px;
   left: 3px;
   margin-right: 5px;
@@ -426,7 +419,7 @@ input[type="radio"]+label>svg {
 }
 
 /* チェックマークの設定(未チェック時)  */
-input[type="radio"]+label>svg>path {
+input[type="radio"] + label > svg > path {
   fill: none;
   stroke: #27ae60;
   stroke-dasharray: 130;
@@ -439,17 +432,16 @@ input[type="radio"]+label>svg>path {
 }
 
 /* チェックマークの設定(チェック時) */
-input[type="radio"]:checked+label>svg>path {
+input[type="radio"]:checked + label > svg > path {
   stroke-dashoffset: 0;
   stroke-opacity: 1;
 }
 
 /* ラベルの位置調整 */
-input[type="radio"]+label {
+input[type="radio"] + label {
   left: -30px;
   position: relative;
 }
-
 
 /* ------------------------------------------------------------------------------------------- */
 
@@ -464,11 +456,10 @@ input[type="checkbox"] {
   display: initial;
   position: relative;
   opacity: 0;
-
 }
 
 /* ラベルの前の四角形を作る */
-input[type="checkbox"]+label::before {
+input[type="checkbox"] + label::before {
   border: 2px solid #343434;
   content: "";
   height: 16px;
@@ -478,13 +469,12 @@ input[type="checkbox"]+label::before {
 }
 
 /* ラベルの前の四角形のフォーカス時 */
-input[type="checkbox"]:focus+label::before {
+input[type="checkbox"]:focus + label::before {
   border: 2px solid #e74c3c;
 }
 
-
 /* SVGの位置と大きさの指定 */
-input[type="checkbox"]+label>svg {
+input[type="checkbox"] + label > svg {
   height: 20px;
   left: 3px;
   margin-right: 5px;
@@ -494,7 +484,7 @@ input[type="checkbox"]+label>svg {
 }
 
 /* チェックマークの設定(未チェック時)  */
-input[type="checkbox"]+label>svg>path {
+input[type="checkbox"] + label > svg > path {
   fill: none;
   stroke: #e74c3c;
   stroke-dasharray: 100;
@@ -507,17 +497,16 @@ input[type="checkbox"]+label>svg>path {
 }
 
 /* チェックマークの設定(チェック時) */
-input[type="checkbox"]:checked+label>svg>path {
+input[type="checkbox"]:checked + label > svg > path {
   stroke-dashoffset: 0;
   stroke-opacity: 1;
 }
 
 /* ラベルの位置調整 */
-input[type="checkbox"]+label {
+input[type="checkbox"] + label {
   left: -30px;
   position: relative;
 }
-
 
 /* ------------------------------------------------------------------------------------------- */
 
@@ -560,14 +549,15 @@ button {
   border: none;
   border-bottom: 4px solid #434343;
   border-radius: 4px;
-  color: #FFF;
+  color: #fff;
   display: table;
   font-weight: bold;
   line-height: 1;
   margin: 10px auto 0;
   outline: none;
   padding: 20px 40px;
-  transition: background-color 0.2s ease-out, transform 0.2s ease-out, border-bottom 0.2s ease-out;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out,
+    border-bottom 0.2s ease-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -585,8 +575,6 @@ button:active {
   transform: translateY(4px);
 }
 
-
-
 /* ------------------------------------------------------------------------------------------- */
 
 /* フローティングラベル */
@@ -594,6 +582,10 @@ button:active {
 .floatinglabel {
   margin-top: 40px;
   position: relative;
+}
+
+.floatinglabel input:not(:placeholder-shown) + span {
+  transform: translateY(-38px) translateX(-16px);
 }
 
 .labeltext {
@@ -606,9 +598,9 @@ button:active {
   transition: all 0.2s ease-out;
 }
 
-.floatinglabel input:focus+span {
+.floatinglabel input:focus + span {
   color: #333;
-  transform: translateY(-38px) translateX(-16px)
+  transform: translateY(-38px) translateX(-16px);
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -616,18 +608,23 @@ button:active {
 /* 状態 */
 
 /* 値が空のとき */
-input:empty {}
+input:empty {
+}
 
 /* 値が合致している */
 input:in-range,
-input:valid {}
+input:valid {
+}
 
 /* 値が合致していない */
 input:invalid,
-input:out-of-range {}
+input:out-of-range {
+}
 
 /* input使用不可の時(disabledが指定されている) */
-input:disabled {}
+input:disabled {
+}
 
 /* 読み込み専用の時(readonlyが指定されている) */
-input:read-only {}
+input:read-only {
+}
